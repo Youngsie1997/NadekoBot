@@ -126,6 +126,16 @@ namespace NadekoBot.Modules.Searches
             }
         }
 
+        public async Task Pokemong() 
+        {
+            using (var http = new httpClient()) 
+            {
+                await Context.Channel.SendMessageAsync("https://totallynotatunnel.org/pokemon/"+ await http.GetStringAsync("https:totallynotatunnel.org/pokemon.php").ConfigureAwait(false)).ConfigureAwait(false);
+            }
+
+
+        }
+
         [NadekoCommand, Usage, Description, Aliases]
         public async Task Image([Remainder] string terms = null)
         {
